@@ -1,0 +1,33 @@
+<div class="container col-md-5">
+    <div class="row">
+        <h3>Let's place your order...</h3>
+        <h4>What's on your shopping list today?</h4>
+    </div>
+</div>
+
+<div class="container col-md-5">
+    <div class="form-group">
+        <input type="text" class="form-control mb-4 mt-3" placeholder="Search" [(ngModel)]="query"/>
+    </div>
+</div>
+
+    
+
+<div class="container col-md-5">
+        <table class="table">
+            <thead> 
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products | searchItem: query">
+                    <td>{{product.item}}</td>
+                    <td>{{product.price | currency }}</td>
+                    <td><button type="button">Add to Cart</button></td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+
