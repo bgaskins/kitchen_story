@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
+  errorMessage = 'Error! Please contact Kitchen Story Support.';
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
