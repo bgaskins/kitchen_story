@@ -1,0 +1,12 @@
+<header>
+    <div class="img-container">
+        <img src="/assets/images/kitchen-story-logo.png" alt="Kitchen Story Logo" id="brand-logo" >
+    </div>
+    <nav class="navbar navbar-expand-md">
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li><a *ngIf="!hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/welcome/admin" class="nav-link">Login</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+            <li><a *ngIf="hardcodedAuthenticationService.IsUserLoggedIn()" routerLink="/product-details" class="nav-link">Shop</a></li>
+        </ul>
+    </nav>
+</header>  
