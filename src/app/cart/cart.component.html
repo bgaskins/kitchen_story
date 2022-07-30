@@ -4,15 +4,15 @@
         <div class="row mt-5">
           <div class="col-lg-9">
             <div class="row shop-listing">
-              <table class="table shop-table">
+              <table class="table shop-table">                
                 <tr>
-                  <th class="b-0">Name</th>
+                  <th class="b-0">Product</th>
                   <th class="b-0">Price</th>
                   <th class="b-0 text-right">Total Price</th>
                 </tr>
                 <tr *ngFor="let product of carts.products">
-                  <td>{{ product.productId.item }}</td>
-                  <td>{{ product.productId.price }}</td>
+                  <td>{{ product.item }}</td>
+                  <td>{{ product.price }}</td>
                   <td class="text-right">
                     <h5 class="font-medium m-b-30">{{ product.total }}</h5>
                   </td>

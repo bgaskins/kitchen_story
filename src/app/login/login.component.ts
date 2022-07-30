@@ -8,16 +8,13 @@ import { HardcodedAuthenticationService } from '../service/hardcoded-authenticat
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  
     username = "admin";
     password = '';
     errorMessage = 'Invalid Credentials';
     invalidLogin = false;
 
-  //router
-  //dependency injection
   constructor(private router: Router, private hardcodedAuthenticationService : HardcodedAuthenticationService) { 
-
   }
 
   ngOnInit() {
