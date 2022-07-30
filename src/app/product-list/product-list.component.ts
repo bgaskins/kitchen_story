@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpService } from '../http.service';
 
 export class Product {
 
@@ -7,24 +8,24 @@ export class Product {
     public id: number,
     public item: string,
     public price: number,
-  ){
-
-  }
+  ){}
 }
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
+
 export class ProductListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private http: HttpService
   ) { }
 
   public searchItem: any = '';
-  public query
-  
+  public query: any = '';
   
   products = [
     {id: 1, item: 'Lemonade Seltzer', price: 7},
@@ -43,8 +44,25 @@ export class ProductListComponent implements OnInit {
     {id: 14, item: 'Leomonade Popsicles', price: 3}
   ];
 
-
-  ngOnInit() {
+  getProducts(): void {
+    this.http.getAllProducts().subscribe((data: any) => {
+      this.products = data.data;
+      console.log(this.products);
+    });
+  }
+  addItemToCart(id): void {
+    let payload = {
+      productId: id
+    };
+    this.http.addToCart(payload).subscribe(() => {
+      this.getProducts();
+      alert('Product was added');
+    });
   }
 
+  ngOnInit() {
+    this.getProducts();
+  }
 }
+
+
