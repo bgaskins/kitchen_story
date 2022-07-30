@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService]},
   { path: 'cart', component: CartComponent },
   { path: 'product-list', component: ProductListComponent, canActivate: [RouteGuardService]},
-  { path: '', component: ProductListComponent, canActivate: [RouteGuardService]},
+  { path: '', component: ProductListComponent},
   { path: 'logout', component: LogoutComponent },
   { path: '**', component: ErrorComponent },
 ];
