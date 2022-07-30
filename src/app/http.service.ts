@@ -12,13 +12,13 @@ export class HttpService {
     return this.http.get(`${environment.baseURL}/product`);
   }
   addToCart(payload) {
-    return this.http.get(`${environment.baseURL}/cart`, payload);
+    return this.http.post(`${environment.baseURL}/cart`, payload);
   }
   getCartItems() {
     return this.http.get(`${environment.baseURL}/cart`);
   }
   increaseQty(payload) {
-    return this.http.get(`${environment.baseURL}/cart`, payload);
+    return this.http.post(`${environment.baseURL}/cart`, payload);
   }
   emptyCart() {
     return this.http.get(`${environment.baseURL}/cart/empty-cart`);
