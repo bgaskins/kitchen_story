@@ -8,8 +8,9 @@ import { environment } from '../environments/environment';
 export class HttpService {
 
   constructor(private http: HttpClient) { }
+  
   getAllProducts() {
-    return this.http.get(`${environment.baseURL}/product`);
+    return this.http.get(`${environment.baseURL}/products-list`);
   }
   addToCart(payload) {
     return this.http.post(`${environment.baseURL}/cart`, payload);
@@ -17,10 +18,7 @@ export class HttpService {
   getCartItems() {
     return this.http.get(`${environment.baseURL}/cart`);
   }
-  increaseQty(payload) {
-    return this.http.post(`${environment.baseURL}/cart`, payload);
-  }
   emptyCart() {
-    return this.http.get(`${environment.baseURL}/cart/empty-cart`);
+    return this.http.delete(`${environment.baseURL}/cart/empty-cart`);
   }
 }
